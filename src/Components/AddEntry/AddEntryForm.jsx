@@ -12,13 +12,14 @@ const AddEntryForm = (props) => {
             date: date,
         };
         console.log(newEntry);
+        props.addNewEntryProperty(newEntry)
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <labe>Weight</labe>
+            <label>Weight</label>
             <input type="number" value={weight} onChange={(event) => setWeight(parseFloat(event.target.value))} />
-            <labe>Date</labe>
+            <label>Date</label>
             <input type="date" value={date} onChange={(event) => setDate(event.target.value)} />
             <button type="submit">Add</button>
         </form>
